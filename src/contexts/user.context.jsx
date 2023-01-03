@@ -1,11 +1,10 @@
-import { createContext, useState, useEffect } from "react";
+import { createContext, useState, useEffect } from 'react';
 
 import {
   onAuthStateChangedListener,
   createUserDocumentFromAuth,
-} from "../utils/firebase/firebase.utils";
+} from '../utils/firebase/firebase.utils';
 
-// as the actual value you want to access
 export const UserContext = createContext({
   setCurrentUser: () => null,
   currentUser: null,
@@ -22,6 +21,7 @@ export const UserProvider = ({ children }) => {
       }
       setCurrentUser(user);
     });
+
     return unsubscribe;
   }, []);
 
